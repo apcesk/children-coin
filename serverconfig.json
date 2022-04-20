@@ -1,0 +1,3 @@
+{
+  "runDatabase": "'C:\\Program Files\\PostgreSQL\\14\\bin> ./pg_ctl -D D:\\data start"
+}

@@ -1,0 +1,7 @@
+{
+  "dev_host": "192.168.0.207",
+  "port": "5432",
+  "user": "TCTM",
+  "password": "",
+  "database_name": "children_coin"
+}
