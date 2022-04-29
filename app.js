@@ -1,13 +1,31 @@
-var createError = require('http-errors');
-var express = require('express');
-var path = require('path');
-var cookieParser = require('cookie-parser');
-var logger = require('morgan');
+const createError = require('http-errors');
+const express = require('express');
+const path = require('path');
+const cookieParser = require('cookie-parser');
+const logger = require('morgan');
 
-var indexRouter = require('./routes/index');
-var usersRouter = require('./routes/users');
+const indexRouter = require('./routes/index');
+const usersRouter = require('./routes/users');
 
-var app = express();
+const app = express();
+
+// 配置跨域
+// app.all('*', async (req, res, next) => {
+//   // 设置允许跨域的地址
+//   res.header('Access-Control-Allow-Origin', '*');
+//   // 配置请求头允许携带的字段
+//   res.header('Access-Control-Allow-Headers', 'Content-type, Content-Length, Authorization, Accept, X-Requested-With')
+//   // 配置允许跨域请求的方法
+//   res.header('Access-Control-Allow-Methods', 'PUT, POST, GET, DELETE, OPTIONS');
+//   // 允许客户携带验证信息
+//   res.header('Access-Control-Allow-Credentials', true);
+//   // 如果是options请求，则快速结束
+//   if (req.method == 'OPTIONS') {
+//     res.end();
+//   }
+//   // 执行后续... 保持洋葱模型
+//   await next()
+// })
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
