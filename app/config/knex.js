@@ -1,3 +1,5 @@
+
+const databaseConfig = require('../../config/databaseConfig.json');
 /**
  * knex 配置文件
  * @configKey client 使用的数据库的客户端
@@ -7,16 +9,19 @@
  * @configKey connection.user 数据库的连接用户名
  * @configKey connection.database 数据库选择的哪个database 
  */
-
-const kenx = require('knex')({
+const knex = require('knex');
+module.exports = knex({
   'client'    : "pg",
   'connection': {
-    host      : '',
-    port      : '',
-    user      : '',
-    password  : '',
-    database  : ''
+    host      : databaseConfig.pg.host,
+    port      : databaseConfig.pg.port,
+    user      : databaseConfig.pg.user,
+    password  : databaseConfig.pg.password,
+    database  : databaseConfig.pg.database
+  },
+  "pool": {
+    min: 0,
+    max: 20
   }
-})
+});
 
-module.exports = knex;
